@@ -81,16 +81,118 @@
 
 // sorting the array
 
-import java.util.*;
+// import java.util.*;
+
+// public class sorting {
+
+//     public static void main(String[] args) {
+//         Integer ar[]={2,5,7,53,4,5,32,3,8};
+
+//         Arrays.sort(ar,Collections.reverseOrder());
+
+//         System.out.println("here our array:"+Arrays.toString(ar));
+//     }
+    
+// }
+
+
+
+//lower bound
+
+// import java.util.Scanner;
+
+// public class sorting {
+
+//     public static int lowerbound(int ar[], int x) {
+
+//         int low = 0;
+//         int high = ar.length - 1;
+//         int result = -1;  // always declare result value before we use it in loops like while etc
+
+//         while (low <= high) {
+
+//             int mid = low + (high - low) / 2;
+
+//             if (ar[mid] == x) {
+//                result = mid;
+//                 high = mid - 1;
+//             }
+//             else if (ar[mid] > x) {
+//                 high = mid - 1;
+//             }
+//             else {
+//                 low = mid + 1;
+//             }
+//         }
+
+//         return result;
+//     }
+
+//     public static void main(String[] args) {
+
+//         Scanner sc =new Scanner(System.in);
+//         int[] ar = {1, 2, 7, 7, 8, 9, 9};
+        
+//         System.out.println("enter the target value");
+//         int x = sc.nextInt();
+
+//         int result = lowerbound(ar, x);
+
+//         System.out.println("Here my array index: " + result);
+//     }
+// }
+
+
+
+
+
+
+import java.util.Scanner;
 
 public class sorting {
 
-    public static void main(String[] args) {
-        Integer ar[]={2,5,7,53,4,5,32,3,8};
+    public static int Squareroot(int num) {
 
-        Arrays.sort(ar,Collections.reverseOrder());
+        int low = 0;
+        int high = num;
+        int result = -1;  // always declare result value before we use it in loops like while etc
 
-        System.out.println("here our array:"+Arrays.toString(ar));
+        while (low <= high) {
+
+            int mid = low + (high - low) / 2;
+            int value =mid*mid;
+
+            if (value == num) {
+                 return mid;
+            }
+            else if (value > num) {
+                high = mid - 1;
+            }
+            else {
+
+                result =mid;
+                low = mid + 1;
+            }
+        }
+
+        return result;
     }
+
+    public static void main(String[] args) {
     
+
+        Scanner sc =new Scanner(System.in);
+        System.out.println("enter the target value");
+        
+        
+        int x = sc.nextInt();
+
+        // int c= x*x;
+
+        int result = Squareroot(x);
+
+
+
+        System.out.println("Here my array index: " + result);
+    }
 }
